@@ -1,5 +1,284 @@
-puts "🌱 Seeding spices..."
+# Clear existing data
+Review.delete_all
+Product.delete_all
+Category.delete_all
 
-# Seed your database here
+# Seed categories
+category1 = Category.create(name: 'Category 1')
+category2 = Category.create(name: 'Category 2')
+category3 = Category.create(name: 'Category 3')
+category4 = Category.create(name: 'Category 4')
 
-puts "✅ Done seeding!"
+
+# Seed products for Category 1
+product1 = category1.products.create(
+  description: "4-12mm Round ABS Cheap Shape Imitation Pearls White Beads Handmade DIY Bracelet Jewelry Accessories Making Wholesale",
+  image: "https://wallpapercave.com/wp/wp2487338.jpg",
+  price: 1500,
+  rating: 7
+)
+product2 = category1.products.create(
+  description: '15g/lot 2mm 3mm 4mm Czech Glass Solid Seed Beads DIY Bracelet Beads For Jewelry Making Accessories',
+  image: 'https://www.vhv.rs/dpng/d/146-1466197_22ct-mens-gold-bracelet-bracelet-hd-png-download.png',
+  price: 1000,
+  rating: 3
+)
+product3 = category1.products.create(
+  description: "Trend Sunflower Flower Resin Earrings for Women Korean Fashion Funny Designer Earrings Elegant Unique Geometric Earring Fun",
+  image: "https://e1.pxfuel.com/desktop-wallpaper/794/137/desktop-wallpaper-bracelet-gold-jewelry-thumbnail.jpg",
+  price: 2000,
+  rating: 10
+)
+product4 = category1.products.create(
+  description: "Isywaka Light Blue Colors 4*6mm 50pcs Rondelle Austria faceted Crystal Glass Beads Loose Spacer Round Beads for Jewelry Making",
+  image: "https://m.media-amazon.com/images/I/61pLMB8VUZL._AC_SX522_.jpg",
+  price: 1500,
+  rating: 8
+)
+product5 = category1.products.create(
+  description: "Brand new original European charm puppy, beautiful rainbow suitable for Pandora bracelet DIY women's jewelry",
+  image: "https://wallpaperaccess.com/full/2135566.jpg",
+  price: 800,
+  rating: 8
+)
+product6 = category1.products.create(
+  description: "Semi-Leather belt",
+  image: "https://freepngimg.com/save/37035-mens-belt-clipart/550x431",
+  price: 900,
+  rating: 8
+)
+product7 = category1.products.create(
+  description: "Approx.1000pcs 2mm Cream Color Czech Glass Beads for Jewelry Making DIY Beads Round Bracelet Necklace Earrings Accessories",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4zJo7XbdSGAWJLNQHCjx1Ji0lYu17Oa3MgA&usqp=CAU",
+  price: 1500,
+  rating: 5
+)
+product8 = category1.products.create(
+  description: "Cat Earrings Luna and Artemis Anime Inspired Enamel Drop Earrings Kawaii Animal Jewelry for Women Girl Gift",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5f9qaO68HcHAVVtACb7QaiXHoCUQ36GOZltYyu5ucPuchW_vg0M2NtNT-TjQ6rafG38w&usqp=CAU",
+  price: 1350,
+  rating: 10
+)
+product9 = category1.products.create(
+  description: "Isywaka White Multicolor 4*6mm 50pcs Rondelle Austria faceted Crystal Glass Beads Loose Spacer Round Beads for Jewelry Making",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAt5s2iigrft7UhN3DbaUQ-ZRJEE7AXIwcuA&usqp=CAU",
+  price: 1300,
+  rating: 3
+)
+product10 = category1.products.create(
+  description: "Wholesale colorful multicolor 2mm 3mm 4mm Czech glass beads for bracelet necklace earrings jewelry DIY seed beads materia",
+  image: "https://cdn.shopify.com/s/files/1/0003/6500/2803/products/B496-Diamond-20k-Rose-Black-1_600x.jpg?v=1665023329",
+  price: 1100,
+  rating: 5
+)
+
+# Seed products for Category 2
+product11 = category2.products.create(
+  description: "Leather belt",
+  image: "data:image/jpeg;base64,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",
+  price: 800,
+  rating: 10
+)
+product12 = category2.products.create(
+  description: "Semi-Leather belt",
+  image: "data:image/jpeg;base64,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",
+  price: 900,
+  rating: 7
+)
+product13 = category2.products.create(
+  description: "Leather belt",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEfQDlJVOksbE9b5lfLXiDTntby0NjEtgOQQ&usqp=CAU",
+  price: 1500,
+  rating: 8
+)
+product14 = category2.products.create(
+  description: "Leather belt",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYb48Ex-T7CExYTVmfGtssomqNB23AMenGLQ&usqp=CAU",
+  price: 1100,
+  rating: 9
+)
+product15 = category2.products.create(
+  description: "Semi-Leather belt",
+  image: "https://cdn-images.farfetch-contents.com/18/99/24/08/18992408_43654423_1000.jpg",
+  price: 700,
+  rating: 6
+)
+product16 = category2.products.create(
+  description: "Semi-Leather belt",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8444q_WjjzADqSd2lgSI5oiEMBw3qvxRFnQ&usqp=CAU",
+  price: 1000,
+  rating: 9
+)
+product17 = category2.products.create(
+  description: "Semi-Leather belt",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM76vx-oFTgt2kqJEWYFRuoavwUdN3S0duvj0XCQ0bcHfCWo-ap80i2XucAC9a55Q-qe0&usqp=CAU",
+  price: 800,
+  rating: 5
+)
+product18 = category2.products.create(
+  description: "Leather belt",
+  image: "https://p.kindpng.com/picc/s/485-4850704_gucci-belt-kids-supreme-hd-png-download.png",
+  price: 700,
+  rating: 9
+)
+product19 = category2.products.create(
+  description: "Leather belt",
+  image: "https://www.peachybelts.co.uk/wp-content/uploads/2019/04/choose-belt-video-image.jpg",
+  price: 1000,
+  rating: 9
+)
+product20 = category2.products.create(
+  description: "Semi-Leather belt",
+  image: "https://freepngimg.com/save/37035-mens-belt-clipart/550x431",
+  price: 900, 
+  rating: 8
+)
+
+# Seed products for Category 3
+product21 = category3.products.create(
+  description: "Designer Handbag Women Shoulder Bag Ladies Handbag Women Purse",
+  image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZGJhZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+  price: 1200,
+  rating: 9
+)
+product22 = category3.products.create(
+  description: "(WDL7429) Business Handbag Ladies Side Bag Branded Purse for Women Womens Designer Handbags",
+  image: "https://m.media-amazon.com/images/I/51erAzSXnwL._UY535_.jpg",
+  price: 1100,
+  rating:8
+)
+product23 = category3.products.create(
+  description: "Small Makeup Bag Handy Travel Cosmetic Toiletry Pouch Leopard Snakeskin Handbag Leather Purse for Women Girls",
+  image: "https://m.media-amazon.com/images/I/71hFps3M3lL._UX500_.jpg",
+  price: 900,
+  rating: 9
+)
+product24 = category3.products.create(
+  description: "New Arrival Crocodile Pattern Leather Ladies Handbag Women Purse",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5dqHcNXJ0-W9NAVOrtMLhAIwFxWk78wFOKQ&usqp=CAU",
+  price: 800, 
+  rating: 9
+)
+product25 = category3.products.create(
+  description: "New Arrival Crocodile Pattern Leather Ladies Handbag Women Purse",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWjoTuuL8LOYt3WbYPR1IA3YpostqmYbihKYaKtMdpfHH5cten4brSTfO3Er2Lp4YbEI4&usqp=CAU",
+  price: 900, 
+  rating: 7
+)
+product26 = category3.products.create(
+  description: "High Quality Popular Daily Use Outdoor Shopping Women Handbags PU Leather Lady Shoulder Purses",
+  image: "https://www.chanel.com/images/t_one////q_auto:good,f_auto,fl_lossy,dpr_1.2/w_1920//mini-flap-bag-light-green-white-ecru-shaded-sequins-gold-tone-metal-shaded-sequins-gold-tone-metal-packshot-artistique-vue1-as3965b10633no020-9521332781086.jpg",
+  price: 1500, 
+  rating: 7
+)
+product27 = category3.products.create(
+  description: "Wholesale Custom Female Shoulder Bag Crossbody Purse for Lady Fashion PU Leather Women Handbag",
+  image: "https://www.chanel.com/images/t_one///q_auto:good,f_auto,fl_lossy,dpr_1.2/w_1920//mini-evening-bag-light-pink-wool-tweed-gold-tone-metal-wool-tweed-gold-tone-metal-packshot-default-as3526b09388nl020-8857327435806.jpg",
+  price: 1500,
+  rating: 8
+)
+product28 = category3.products.create(
+  description: "Factory a Wholesale Exquisite Leather Women′s Bags Fashion Bag Crossbody Bag Single Shoulder Handbag Purse",
+  image: "https://a.1stdibscdn.com/chanel-yellow-tweed-medium-19-flap-bag-for-sale/v_13101/1678097685090/luxury_women_chanel_used_handbags_p757669_014_master.jpg?width=768",
+  price: 1600, 
+  rating: 8
+)
+product29 = category3.products.create(
+  description: "Wholesale Replicas Bags Handbags Designer Bag Handbags Women Purses",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0WvfS_AGfI7ht2bdIRkLu9OzSwOJk2TfHfA&usqp=CAU",
+  price: 1700,
+  rating: 8
+)
+product30 = category3.products.create(
+  description: "Top-Design Cowhide Leather Polka-DOT Wallet Fashion Classical Woman Purses",
+  image: "https://hips.hearstapps.com/hbz.h-cdn.co/assets/16/24/4000x2250/hd-aspect-1466178782-gettyimages-540778074.jpg?resize=1200:*",
+  price: 1800,
+  rating: 8
+)
+
+#category 4
+
+product31 = category4.products.create(
+  description: "Olevs 5562 Men Quartz Chronograph Buy Online Man Wristwatch Calender Timer Casual Quartz Watches",
+  image: "https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d3Jpc3R3YXRjaHxlbnwwfHwwfHw%3D&w=1000&q=80",
+  price: 1200,
+  rating: 8
+)
+product32 = category4.products.create(
+  description: "olevs 5885 Top high quality sport watches for men waterproof classic stainless steel fashion man wrist business Quartz Watches",
+  image: "https://c4.wallpaperflare.com/wallpaper/29/520/1004/breitling-swiss-luxury-watches-swiss-wrist-watches-luxury-analog-watch-breitling-hd-wallpaper-preview.jpg",
+  price: 1100,
+  rating: 8
+)
+product33 = category4.products.create(
+  description: "Men Watch OLEVS 2858 Business Multi Time Zone Wristwatch Waterproof Feature Analog Date Watch Stainless Steel Quartz Watch",
+  image: "https://c4.wallpaperflare.com/wallpaper/816/832/60/watch-luxury-watches-ulysse-nardin-wallpaper-preview.jpg",
+  price: 1500,
+  rating: 9
+)
+product34 = category4.products.create(
+  description: "Olevs 2870 Waterproof Chronograph Luminosos Analogue Luxury Crescent Steel Multifuncional Com Tres Olhos Homem quartz watches",
+  image: "https://cdn.shopify.com/s/files/1/0263/1919/2169/files/ow-xmas-mobile-rolex_x800.jpg?v=1613637600",
+  price: 1500,
+  rating: 7
+)
+product35 = category4.products.create(
+  description: "New Style Wearable Ble NRF52810 iBeacon Wristband Beacon Bracele",
+  image: "https://i.pinimg.com/originals/c4/2a/f6/c42af627abc222376be52d4512e26ce9.jpg",
+  price: 2000,
+  rating: 8
+)
+product36 = category4.products.create(
+  description: "Custom S9871G Calendar Dial Quartz Wrist Watch Relojes Para Hombres Silver Band Arabic Watches For Men",
+  image: "https://w0.peakpx.com/wallpaper/954/28/HD-wallpaper-hublot-wrist-watch-clock-horloge-luxury-watches-thumbnail.jpg",
+  price: 1700,
+  rating: 10
+)
+product37 = category4.products.create(
+  description: "SINOBI Cool Boys Watch S9823G All Black Mens Watch With Luminous Hands Stainless Steel Strap Simple Watch With No Dial Saat",
+  image: "https://wallpaperaccess.com/full/1332142.jpg",
+  price: 1900,
+  rating: 6
+)
+product38 = category4.products.create(
+  description: "Custom Logo Popular Watches Man Relogio Masculino Simple Men Quartz Wristwatch Relojes Hombre",
+  image: "https://wallpaperaccess.com/full/1332134.jpg",
+  price: 1400,
+  rating: 7
+)
+product39 = category4.products.create(
+  description: "sinobi Men's Digital Watch Custom Logo Watches Chronograph Wristwatches Waterproof Quartz Sports Watch Custom Business",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdROWVT37xY6i5dlsK5u1aoZiPaaxxx-d2-BHFogivBAMRrJCgcYBWOj57ZbmPjgg_xOA&usqp=CAU",
+  price: 1200,
+  rating: 5
+)
+product40 = category4.products.create(
+  description: "SINOBI Brand S9863 Mens Quartz Watches Temperament Wrist Watch Fashion Trend Waterproof Men Luxury Watch",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5OngoKTwTlkojpkJcc-sQ2Jy5wg-pHZK2GIAY6VKOl2n-F0UFZV7l5S7r98hkVFpTwVM&usqp=CAU",
+  price: 1500,
+  rating: 8
+)
+
+# Seed reviews for products
+product1.reviews.create(review: 'Great product!')
+product1.reviews.create(review: 'Highly recommended')
+product2.reviews.create(review: 'Average product')
+product2.reviews.create(review: 'Could be better')
+product3.reviews.create(review: 'Awesome!')
+product3.reviews.create(review: 'Impressed')
+product4.reviews.create(review: 'Good value for money')
+product4.reviews.create(review: 'Satisfied with the purchase')
+product5.reviews.create(review: 'Not as expected')
+product5.reviews.create(review: 'Disappointed')
+product6.reviews.create(review: 'Fantastic!')
+product6.reviews.create(review: 'Love it!')
+product7.reviews.create(review: 'Decent quality')
+product7.reviews.create(review: 'Met my expectations')
+product8.reviews.create(review: 'Could improve')
+product8.reviews.create(review: 'Fair product')
+product9.reviews.create(review: 'Excellent!')
+product9.reviews.create(review: 'Happy customer')
+product10.reviews.create(review: 'Impressive features')
+product10.reviews.create(review: 'Recommended')
+
+# You can continue seeding reviews for the remaining products if needed.

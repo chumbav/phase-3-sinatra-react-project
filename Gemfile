@@ -34,6 +34,10 @@ gem "sqlite3", "~> 1.4"
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
+# Provides suggestions for unknown method and constant names
+# https://github.com/yuki24/did_you_mean
+gem "did_you_mean", "~> 1.4"
+
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
